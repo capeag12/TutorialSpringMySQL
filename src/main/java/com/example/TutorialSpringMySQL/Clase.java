@@ -37,8 +37,6 @@ public class Clase {
     public Clase() {
     }
     
-    
-
     public int getId() {
         return id;
     }
