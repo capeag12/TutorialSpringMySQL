@@ -24,8 +24,9 @@ public class Clase {
     private int id;
     private String nombre;
     
-    @OneToOne
-    @JoinColumn(name = "idProfesor", referencedColumnName = "id")
+    //Para expandir el tema de las relaciones ver: https://medium.com/codestorm/spring-boot-jpa-entity-relationships-526d46ae228e
+    @OneToOne //Se realiza una relación 1:1 con la tabla Persona
+    @JoinColumn(name = "idProfesor", referencedColumnName = "id") //Se elige el nombre de la columna que contendrá la foreignKey y el nombre de la columna que referencias
     private Persona profesor;
 
     public Clase(String nombre, Persona profesor) {
