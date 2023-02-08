@@ -4,6 +4,7 @@
  */
 package com.example.TutorialSpringMySQL;
 
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,5 +14,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface RepositorioPersona extends JpaRepository<Persona,Integer>{
-    Persona findByNombre(String nombre);
+    Persona findOneByNombre(String nombre);
+    List<Persona> findByNombreLike(String nombre);
+    List<Persona> findByApellido(String apellido);
 }
